@@ -1,0 +1,37 @@
+html, body
+	background #000
+	height 100%
+	min-height 100%
+	overflow hidden
+
+canvas 
+	position absolute
+	top 10%
+	left 0
+	// z-index 1
+
+.topBar,.bottomBar
+	position absolute
+	left 0
+	height 10%
+	width 100%
+	background #000
+	z-index 0
+	
+.topBar
+	top 0
+	
+.bottomBar
+	bottom 0
+	
+.vignette{
+	position: absolute;
+	pointer-events:none;
+	width:100%;
+	height: 80%;
+	min-height: 80%;
+	z-index: 2;
+	top 10%
+	left: 0;
+	background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,1) 100%);
+}
