@@ -3,6 +3,7 @@ html, body
 	height 100%
 	min-height 100%
 	overflow hidden
+	cursor: url('./../img/cursor.png'), default;
 
 canvas 
 	position absolute
@@ -35,3 +36,45 @@ canvas
 	left: 0;
 	background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,1) 100%);
 }
+
+
+.title
+	z-index 5
+	position absolute
+	top 50%
+	left 50%
+	width 145px
+	height 39px
+	margin-left -72px
+	margin-top -20px
+	
+	img
+		width 100%
+		height 100%
+		opacity 0
+	
+	
+	.loaderBar, .loaderBg 
+		bottom 0
+		width 100%
+		height 1px
+		background #111
+		transform scale(0,1)
+		
+	.loaderBar
+		background #444
+		
+.instruction
+	opacity 0
+	position absolute
+	// height 2
+	bottom 2%
+	height 5%
+	width 400px
+	text-align center
+	margin-left -200px
+	font-size 12px
+	font-family: Gill Sans, Gill Sans MT, sans-serif;
+	left 50%
+	color #333
+	z-index 3

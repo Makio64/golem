@@ -2,7 +2,7 @@ class LightAura extends THREE.Object3D
 
 	constructor:()->
 		super()
-		@lightCount = 40
+		@lightCount = 50
 		@lights = []
 		@radius = 120
 		@ambient = new THREE.AmbientLight(0x111111)

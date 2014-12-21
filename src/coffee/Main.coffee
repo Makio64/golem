@@ -40,6 +40,7 @@ class Main
 	resize:()=>
 		width 	= window.innerWidth
 		height 	= window.innerHeight
+		Stage3d.resize()
 		SceneTraveler.resize()
 		return
 
@@ -49,16 +50,16 @@ class Main
 document.addEventListener('DOMContentLoaded', ()->
 	main = new Main()
 	
-	window.onblur = (e)->
-		main.pause = true
-		cancelAnimationFrame(main.update)
-		return
+	# window.onblur = (e)->
+	# 	main.pause = true
+	# 	cancelAnimationFrame(main.update)
+	# 	return
 
-	window.onfocus = ()->
-		requestAnimationFrame(main.update)
-		main.lastTime = Date.now()
-		main.pause = false
-		return
+	# window.onfocus = ()->
+	# 	requestAnimationFrame(main.update)
+	# 	main.lastTime = Date.now()
+	# 	main.pause = false
+	# 	return
 
 	window.onresize = ()->
 		main.resize()

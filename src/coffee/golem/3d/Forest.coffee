@@ -46,20 +46,20 @@ class Forest extends THREE.Object3D
 
 		@geometry = @generateGeometry(0)
 		
-		uniforms = THREE.UniformsUtils.clone(THREE.UniformsLib.fog)
-		uniforms.windForce = { type: "f", value: 0.1 }
-		uniforms.iceFactor = { type: "f", value: 0.0 }
-		uniforms = THREE.UniformsUtils.merge([uniforms, THREE.UniformsLib.lights])
+		# uniforms = THREE.UniformsUtils.clone(THREE.UniformsLib.fog)
+		# uniforms.windForce = { type: "f", value: 0.1 }
+		# uniforms.iceFactor = { type: "f", value: 0.0 }
+		# uniforms = THREE.UniformsUtils.merge([uniforms, THREE.UniformsLib.lights])
 
-		@material = new THREE.ShaderMaterial(
-			uniforms:uniforms
-			vertexShader: Data.shaders.tree.vertex
-			fragmentShader: Data.shaders.tree.fragment
-		)
-		@material.fog = true
-		@material.lights = true
+		# @material = new THREE.ShaderMaterial(
+		# 	uniforms:uniforms
+		# 	vertexShader: Data.shaders.tree.vertex
+		# 	fragmentShader: Data.shaders.tree.fragment
+		# )
+		# @material.fog = true
+		# @material.lights = true
 
-		@material = new THREE.MeshLambertMaterial(color:{0x333333})
+		@material = new THREE.MeshLambertMaterial(color:{0x111111})
 		return
 
 

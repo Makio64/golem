@@ -5,9 +5,9 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta property="og:site_name" content="SimpleTemplate">
-    <meta property="og:title" content="SimpleTemplate">
-    <meta property="og:description" content="your website">
+    <meta property="og:site_name" content="Golem">
+    <meta property="og:title" content="Golem">
+    <meta property="og:description" content="Golem">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -19,7 +19,11 @@
   <body>
     <div class="topBar"></div>
     <div class="bottomBar"></div>
-    <div class="loader"></div>
+    <div id="title" class="title"><img id="img" src="img/title.png">
+      <div id="loaderBar" class="loaderBar"></div>
+      <div class="loaderBg"></div>
+    </div>
+    <div class="instruction">Explore by moving the mouse around, press and hold any key of your keyboard to meet the Golem. You can also stay click or touch.</div>
     <!-- build:js js/vendor.js-->
     <!-- bower:js-->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -43,6 +47,8 @@
     <script type="text/javascript" src="js/golem/scenes/TestLightScene.js"></script>
     <script type="text/javascript" src="js/golem/scenes/TestSkeletonScene.js"></script>
     <script type="text/javascript" src="js/golem/scenes/TestTreeScene.js"></script>
+    <script type="text/javascript" src="js/golem/ui/Title.js"></script>
+    <script type="text/javascript" src="js/golem/ui/Instruction.js"></script>
     <script type="text/javascript" src="js/golem/3d/Temple.js"></script>
     <script type="text/javascript" src="js/golem/3d/Light.js"></script>
     <script type="text/javascript" src="js/golem/3d/LightAura.js"></script>

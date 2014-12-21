@@ -31,10 +31,10 @@ class Source extends THREE.Mesh
 
 		THREE.Mesh.call(this, geometry, material)
 
-		gui = new dat.GUI()
-		gui.add(uniforms.noisePower,'value',0.001,20).name('noisePower').step(0.01)
-		gui.add(uniforms.anglePower,'value',0.001,20).name('anglePower').step(0.01)
-		gui.add(uniforms.anglePowerAmplification,'value',0.0,20).name('anglePowerAmplification').step(0.01)
+		# gui = new dat.GUI()
+		# gui.add(uniforms.noisePower,'value',0.001,20).name('noisePower').step(0.01)
+		# gui.add(uniforms.anglePower,'value',0.001,20).name('anglePower').step(0.01)
+		# gui.add(uniforms.anglePowerAmplification,'value',0.0,20).name('anglePowerAmplification').step(0.01)
 
 		# this.scale.y = 5
 

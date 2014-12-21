@@ -1,10 +1,13 @@
 class Stone extends THREE.Mesh
 
+	@soundsPlay = 0
+
 	constructor:(type,x,y,z,scale)->
 
 		# type ?= Math.floor(Math.random()*2)
-		type = 1;
-		y += 10
+		type = 1
+		@fly = false
+		@positionnated = false
 		
 		switch(type)
 			when 0
@@ -59,36 +62,41 @@ class Stone extends THREE.Mesh
 				break	
 
 		@body = new OIMO.Body(obj)
+		@body.body.linearVelocity.set(0,-10,0)
 		@body.body.mass = 2+Math.random()
+		@body.body.allowSleep = false
 
 		material.envMap = Data.textures.reflectionCube
 		material.reflectivity = .7
 		material.transparent = true
 		material.opacity = .8
+		material.fog = true
 		material.combine = THREE.AddOperation
 
 		THREE.Mesh.call(this, geometry, material)
+
+		@occlusion = new THREE.Mesh(geometry, Stage3d.postprocessing.blackMaterial)
 
 		return
 
 	update:(dt, golem)->
 		if(golem)
 			target = @target
-			maxSpeed = 1.5
+			maxSpeed = 5
 
-			speedX = (target.x-@body.body.position.x)*.25
+			speedX = (target.x-@body.body.position.x)*.75
 			if(speedX>maxSpeed)
 				speedX = maxSpeed
 			else if(speedX<-maxSpeed)
 				speedX = -maxSpeed
 
-			speedY = (target.y-@body.body.position.y)*.25
+			speedY = (target.y-@body.body.position.y)*.75
 			if(speedY>maxSpeed)
 				speedY = maxSpeed
 			else if(speedY<-maxSpeed)
 				speedY = -maxSpeed
 
-			speedZ = (target.z-@body.body.position.z)*.25
+			speedZ = (target.z-@body.body.position.z)*.75
 			if(speedZ>maxSpeed)
 				speedZ = maxSpeed
 			else if(speedZ<-maxSpeed)
@@ -99,3 +107,25 @@ class Stone extends THREE.Mesh
 		if !golem || !@body.getSleep()
 			@position.copy(@body.getPosition())
 			@quaternion.copy(@body.getQuaternion())
+
+		# if(@fly && @position.y < 10)
+		# 	@fly = false
+		# 	if(Stone.soundsPlay<1)
+		# 		Stone.soundsPlay++
+		# 		Data.sounds.stoneHit2.play()
+		# 		r = Math.floor(Math.random()*3)
+		# 		Data.sounds.stoneHit2.play()
+		# 		# if(r == 0)
+		# 		# 	Data.sounds.stoneHit1.play()
+		# 		# else if(r == 1)
+		# 		# 	Data.sounds.stoneHit2.play()
+		# 		# else if(r == 3)
+		# 		# 	Data.sounds.stoneHit3.play()
+
+		# else if(!@fly)
+		# 	if(@position.y > 20)
+		# 		@fly = true
+
+		@occlusion.position.copy(@position)
+		@occlusion.quaternion.copy(@quaternion)
+		@occlusion.scale.copy(@scale)

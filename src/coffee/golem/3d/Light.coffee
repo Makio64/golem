@@ -60,6 +60,17 @@ class Light extends THREE.Mesh
 		geometry1.merge(geometry2);
 		geometry1.merge(geometry3);
 
+		# todo Other side of the light
+		# geo2 = geometry1.clone()
+		# m = new THREE.Matrix4();
+		# m.makeRotationX( Math.PI );
+		# geo2.applyMatrix(m)
+		# translateMatrix = new THREE.Matrix4();
+		# translateMatrix.makeTranslation( 0,0,-40 );
+		# geo2.applyMatrix(translateMatrix);
+
+		# geometry1.merge(geo2)
+
 		return geometry1;
 
 	@geometry = @generateGeometry()

@@ -7,9 +7,9 @@ html(lang="en")
 		meta(name="apple-mobile-web-app-status-bar-style" content="black")
 
 		//- facebook meta
-		meta(property="og:site_name", content="SimpleTemplate")
-		meta(property="og:title", content="SimpleTemplate")
-		meta(property="og:description", content="your website")
+		meta(property="og:site_name", content="Golem")
+		meta(property="og:title", content="Golem")
+		meta(property="og:description", content="Golem")
 		meta(property="og:type", content="website")
 		meta(property="og:url", content="")
 		meta(property="og:image", content="")
@@ -21,7 +21,14 @@ html(lang="en")
 	body
 		.topBar
 		.bottomBar
-		.loader
+		.title#title
+			img#img(src='img/title.png')
+			.loaderBar#loaderBar
+			.loaderBg
+
+		.instruction
+			|Explore by moving the mouse around, press and hold any key of your keyboard to meet the Golem. You can also stay click or touch.
+
 		//- .vignette
 		// build:js js/vendor.js
 		// bower:js
@@ -43,6 +50,8 @@ html(lang="en")
 		script(type='text/javascript', src='js/golem/scenes/TestLightScene.js')
 		script(type='text/javascript', src='js/golem/scenes/TestSkeletonScene.js')
 		script(type='text/javascript', src='js/golem/scenes/TestTreeScene.js')
+		script(type='text/javascript', src='js/golem/ui/Title.js')
+		script(type='text/javascript', src='js/golem/ui/Instruction.js')
 		script(type='text/javascript', src='js/golem/3d/Temple.js')
 		script(type='text/javascript', src='js/golem/3d/Light.js')
 		script(type='text/javascript', src='js/golem/3d/LightAura.js')
